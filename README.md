@@ -84,7 +84,7 @@ Authenticate ngrok with your account in the command line.
 Run: ngrok http http://localhost:9090
 Copy the public URL provided by ngrok.
 
-3. Configure Jenkins Webhook URL
+# Configure Jenkins Webhook URL
    
 # Get Jenkins Webhook URL:
 Go to Manage Jenkins -> Configure System.
