@@ -131,7 +131,7 @@ Since webhooks cannot trigger Jenkins running on localhost, use [ngrok](https://
 3. **Configure Build Commands**
    - Use the parameters in your Maven command:
      ```sh
-     mvn test -P"$Profile" -Dbrowser="$browserName"
+     test -P"$Profile" -Dbrowser="$browserName"
      ```
 
 4. **Save and Build**
