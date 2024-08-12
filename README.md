@@ -125,20 +125,21 @@ Since webhooks cannot trigger Jenkins running on localhost, use [ngrok](https://
    - Check **This project is parameterized**.
 
 2. **Add Parameters**
-   - Add a **Choice Parameter** for options such as browser names (e.g., Chrome, Firefox).
-   - Add another **Choice Parameter** for pom.xml profile IDs for selenium. 
+   -  Add a **Choice Parameter** for options such as browser names (e.g., Chrome, Firefox).
+   - Add another **Choice Parameter** for pom.xml profile IDs in your Selenium code. 
 
-3. **Configure Build Commands**
-   - Use the parameters in your Build Goals command for Selenium:
+4. **Configure Build Commands**
+-  Add goals according to what kind of code you are configuring to run such as - API, Selenium, Cucumber, Cypress etc.
+   - Use the parameters in your Build Goals command to run Selenium tests:
      ```sh
      test -P"$Profile" -Dbrowser="$browserName"
      ```
-   - Use the parameters in your Build Goals command for Cucumber:
+   - Use the parameters in your Build Goals command to run Cucumber tests:
      ```sh
      test -Dcucmber.filter.tags="@OffersPage" -Dbrowser="$browserName"
      ```
 
-4. **Save and Build**
+6. **Save and Build**
    - Save the job configuration.
    - Run the job and select parameters as needed.
 
