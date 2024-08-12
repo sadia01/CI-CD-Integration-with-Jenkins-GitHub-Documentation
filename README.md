@@ -126,12 +126,16 @@ Since webhooks cannot trigger Jenkins running on localhost, use [ngrok](https://
 
 2. **Add Parameters**
    - Add a **Choice Parameter** for options such as browser names (e.g., Chrome, Firefox).
-   - Add another **Choice Parameter** for XML profile IDs.
+   - Add another **Choice Parameter** for pom.xml profile IDs for selenium. 
 
 3. **Configure Build Commands**
-   - Use the parameters in your Maven command:
+   - Use the parameters in your Build Goals command for Selenium:
      ```sh
      test -P"$Profile" -Dbrowser="$browserName"
+     ```
+   - Use the parameters in your Build Goals command for Cucumber:
+     ```sh
+     test -Dcucmber.filter.tags="@OffersPage" -Dbrowser="$browserName"
      ```
 
 4. **Save and Build**
